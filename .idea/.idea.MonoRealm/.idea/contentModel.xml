@@ -3,13 +3,42 @@
   <component name="ContentModelStore">
     <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_MonoRealm.-1585202908.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="LilyInjection" t="IncludeRecursive">
+        <e p="Framework" t="Include">
+          <e p="API" t="Include">
+            <e p="IConfig.cs" t="Include" />
+            <e p="IContext.cs" t="Include" />
+            <e p="IExtension.cs" t="Include" />
+            <e p="IInjectionMapper.cs" t="Include" />
+            <e p="IInjector.cs" t="Include" />
+          </e>
+          <e p="Impl" t="Include">
+            <e p="Context.cs" t="Include" />
+            <e p="Inject.cs" t="Include" />
+            <e p="InjectionMapper.cs" t="Include" />
+            <e p="Injector.cs" t="Include" />
+          </e>
+        </e>
+        <e p="LilyInjection.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="LilyInjection.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="MonoRealm" t="IncludeRecursive">
         <e p="Content" t="Include">
           <e p="Content.mgcb" t="Include" />
+          <e p="heart.png" t="Include" />
         </e>
         <e p="Game1.cs" t="Include" />
         <e p="MonoRealm.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
+        <e p="TestConfig.cs" t="Include" />
+        <e p="TestExtension.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

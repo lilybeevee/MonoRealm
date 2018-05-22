@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoRealm", "MonoRealm\MonoRealm.csproj", "{2872337C-24CF-42C7-9706-0DE96D5435C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilyInjection", "LilyInjection\LilyInjection.csproj", "{EDE7852D-AA45-41FE-BA5A-6C77C7455ED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2872337C-24CF-42C7-9706-0DE96D5435C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2872337C-24CF-42C7-9706-0DE96D5435C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2872337C-24CF-42C7-9706-0DE96D5435C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2872337C-24CF-42C7-9706-0DE96D5435C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE7852D-AA45-41FE-BA5A-6C77C7455ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE7852D-AA45-41FE-BA5A-6C77C7455ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE7852D-AA45-41FE-BA5A-6C77C7455ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE7852D-AA45-41FE-BA5A-6C77C7455ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
