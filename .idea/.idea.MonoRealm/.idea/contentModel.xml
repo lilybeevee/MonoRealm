@@ -30,13 +30,19 @@
         </e>
       </e>
       <e p="MonoRealm" t="IncludeRecursive">
+        <e p="Baby.cs" t="Include" />
+        <e p="Camera.cs" t="Include" />
         <e p="Content" t="Include">
           <e p="Content.mgcb" t="Include" />
+          <e p="floor.png" t="Include" />
           <e p="heart.png" t="Include" />
+          <e p="wallside.png" t="Include" />
+          <e p="walltop.png" t="Include" />
         </e>
         <e p="Game1.cs" t="Include" />
         <e p="MonoRealm.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
+        <e p="StretchyBaby.cs" t="Include" />
         <e p="TestConfig.cs" t="Include" />
         <e p="TestExtension.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />

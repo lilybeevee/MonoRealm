@@ -1,4 +1,5 @@
-﻿using LilyInjection.Framework.API;
+﻿using System.Collections.Generic;
+using LilyInjection.Framework.API;
 using LilyInjection.Framework.Impl;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,6 +11,9 @@ namespace MonoRealm{
         private SpriteBatch spriteBatch;
         private Texture2D heart;
         private IContext context;
+        private List<Baby> _babies = new List<Baby>();
+
+        public Camera Camera;
 
         public Game1(){
             graphics = new GraphicsDeviceManager(this);
@@ -23,6 +27,8 @@ namespace MonoRealm{
                       .Extend<TestExtension>()
                       .Config<TestConfig>();
 
+            Camera = new Camera(this);
+
             base.Initialize();
         }
 
@@ -31,6 +37,17 @@ namespace MonoRealm{
 
             // TODO: use this.Content to load your game content here
             heart = Content.Load<Texture2D>("heart");
+            var floor = Content.Load<Texture2D>("floor");
+            var wallTop = Content.Load<Texture2D>("walltop");
+            var wallSide = Content.Load<Texture2D>("wallside");
+
+            for(int x = -1; x <= 1; x++){
+                for(int y = -1; y <= 1; y++){
+                    _babies.Add(new Baby(this, floor, new Vector3(x, y, 0)));
+                }
+            }
+            _babies.Add(new Baby(this, wallTop, new Vector3(-2, 0, 1)));
+            _babies.Add(new StretchyBaby(this, wallSide, new Vector3(-2, 0, 0)));
         }
 
         protected override void Update(GameTime gameTime){
@@ -39,6 +56,7 @@ namespace MonoRealm{
                 Exit();
 
             // TODO: Add your update logic here
+            Camera.Update();
 
             base.Update(gameTime);
         }
@@ -47,13 +65,10 @@ namespace MonoRealm{
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            var drawpos = new Vector2(
-                GraphicsDevice.Viewport.Width / 2f,
-                GraphicsDevice.Viewport.Height / 2f);
 
-            spriteBatch.Begin(SpriteSortMode.Immediate);
-            spriteBatch.Draw(heart, drawpos, null, Color.White, 0f, new Vector2(heart.Width / 2f, heart.Height / 2f),
-                             0.1f, SpriteEffects.None, 0f);
+            spriteBatch.Begin(SpriteSortMode.Immediate, samplerState: SamplerState.PointClamp, transformMatrix: Camera.GetMatrix());
+            foreach(var i in _babies)
+                i.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
